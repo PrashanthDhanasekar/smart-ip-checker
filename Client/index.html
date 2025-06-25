@@ -1,0 +1,93 @@
+index.html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Smart IP Checker</title>
+    <script defer src="script.js"></script>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        font-family: "Times New Roman", serif;
+        overflow-y: auto; 
+        padding: 20px;
+      }
+      h1 {
+        font-weight: bold;
+        font-size: 32px;
+      }
+      .buttons,
+      #blacklist,
+      #geo {
+        text-align: center;
+        margin-top: 10px;
+      }
+      button {
+        font-size: 16px;
+        padding: 8px 12px;
+        margin: 5px;
+        border: 1px solid black;
+        background-color: lightgray;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: lightgray;
+      }
+      input {
+        padding: 5px;
+        margin-top: 5px;
+      }
+      p {
+        font-size: 14px;
+        color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Smart IP Checker</h1>
+
+    <div class="buttons">
+      <button onclick="showBlacklist()">IP Blacklist Check</button>
+      <button onclick="showGeoCheck()">IP Geo Check</button>
+    </div>
+
+    <div id="blacklist" style="display: none">
+      <h2>IP Blacklist Checker</h2>
+      <input
+        type="text"
+        id="cidr"
+        placeholder="Enter the subnet (e.g., 45.39.2.0/24)"
+      />
+      <button onclick="checkBlacklist()">Check Blacklist</button>
+      <p>Please enter the subnet, e.g., 45.39.2.0/24</p>
+      <p id="blacklistResult"></p> 
+    </div>
+
+    <div id="geo" style="display: none">
+      <h2>IP Geo Checker</h2>
+      <input type="text" id="ip" placeholder="Enter an IP address" />
+      <button onclick="CheckGeo()">Check</button>
+      <p>Please enter a single IP address, e.g., 45.39.2.178</p>
+      <p id="geoResult"></p> 
+    </div>
+
+    <div id="results"></div>
+    <div id="notify"></div>
+    <div id="result"></div>
+
+    <script>
+      function showBlacklist() {
+        document.getElementById("blacklist").style.display = "block";
+        document.getElementById("geo").style.display = "none";
+      }
+
+      function showGeoCheck() {
+        document.getElementById("geo").style.display = "block";
+        document.getElementById("blacklist").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
