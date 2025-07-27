@@ -23,15 +23,3 @@ Smart IP Checker is a simple web app that checks:
 [Frontend]: HTML, JavaScript
 
 [Backend]: Node.js, Express
-
-## APIs Used:
-
-# BlackList Check
-- MXToolbox
-
-# Geolocation Check
-- IPGeolocation
-- IPapi
-- IPinfo
-- FreeIPAPI
-- IP2Location
